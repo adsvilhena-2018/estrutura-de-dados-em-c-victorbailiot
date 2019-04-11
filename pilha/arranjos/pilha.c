@@ -15,8 +15,6 @@ bool Pilha_Vazia(){
         return true;
     else
         return false;
-
-    //return Topo==-1;
 }
 
 int Tamanho(){
