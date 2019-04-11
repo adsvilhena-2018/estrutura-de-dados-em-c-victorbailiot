@@ -49,6 +49,16 @@ bool Fila_Desenfileirar(int &valor){
     }
 }
 
+//verificar ultimo valor da fila 
+bool Fila_Get(int &valor){
+    if(Fila_Vazia()){
+        return false;
+    }else{
+        valor=Fila[Frente];
+        return true;
+    }
+}
+
 int Fila_Tamanho(){
     return (Tras - Frente)+1;
 }
