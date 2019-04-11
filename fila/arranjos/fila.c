@@ -6,7 +6,7 @@ int const MAXTAM=1000;
 int Frente, Tras;
 int Fila[MAXTAM];
 
-void Fila_Construtor(){
+void Construtor(){
     Frente=0;
     Tras=-1;
 }
@@ -17,8 +17,6 @@ bool Fila_Vazia(){
     }else{
         return false;
     }
-
-    //return Frente>Tras;
 }
 
 bool Fila_Cheia(){
@@ -29,7 +27,7 @@ bool Fila_Cheia(){
     }
 }
 
-bool Fila_Enfileirar(int valor){
+bool Enfileirar(int valor){
     if(Fila_Cheia()){
         return false;
     }else{
@@ -39,7 +37,7 @@ bool Fila_Enfileirar(int valor){
     }
 }
 
-bool Fila_Desenfileirar(int &valor){
+bool Desenfileirar(int &valor){
     if(Fila_Vazia()){
         return false;
     }else{
@@ -59,26 +57,26 @@ bool Fila_Get(int &valor){
     }
 }
 
-int Fila_Tamanho(){
+int Tamanho(){
     return (Tras - Frente)+1;
 }
 
 
 int main(){
     int Valor;
-    Fila_Construtor();
+    Construtor();
 
-    Fila_Enfileirar(2);
-    Fila_Enfileirar(5);
-    Fila_Enfileirar(4);
+    Enfileirar(2);
+    Enfileirar(5);
+    Enfileirar(4);
 
-    printf("\n\nTamanho:%d\n\n",Fila_Tamanho());
+    printf("\n\nTamanho:%d\n\n",Tamanho());
 
 
-    while( Fila_Desenfileirar(Valor) ){
+    while( Desenfileirar(Valor) ){
         printf("\nValor:%d\n",Valor);
     }
-    printf("\n\nTamanho:%d\n\n",Fila_Tamanho());
+    printf("\n\nTamanho:%d\n\n",Tamanho());
 
     system("pause");
     return 0;
